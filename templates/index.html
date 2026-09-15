@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero">
+<div class="badge">TELEGRAM BOT HOSTING</div>
+<h1>Host your Telegram bots<br><span>from one dashboard.</span></h1>
+<p>Upload a Python bot, start it, stop it, restart it, and view live logs from a clean mobile-friendly panel.</p>
+<div class="actions"><a class="btn primary" href="{{url_for('register')}}">Get Started</a><a class="btn" href="{{url_for('login')}}">Login</a></div>
+</section>
+<section class="cards">
+<div><b>🤖 Multi-bot</b><p>Manage multiple bots under one account.</p></div>
+<div><b>📟 Logs</b><p>See stdout and errors from each bot.</p></div>
+<div><b>⚙️ Controls</b><p>Start, stop and restart with one tap.</p></div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<div class="panel small"><h2>Welcome back</h2><p>Login to your hosting dashboard.</p>
+<form method="post"><label>Username<input name="username" required></label><label>Password<input name="password" type="password" required></label><button class="btn primary">Login</button></form>
+<p class="muted">No account? <a href="{{url_for('register')}}">Create one</a></p></div>
+{% endblock %}

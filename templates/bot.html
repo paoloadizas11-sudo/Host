@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}
+<a class="back" href="{{url_for('dashboard')}}">← Dashboard</a>
+<div class="toprow"><div><div class="badge">BOT</div><h1>{{bot.name}}</h1><p class="muted">{{bot.filename}}</p></div><span id="status" class="status {{'running' if bot.running else 'stopped'}}">{{'RUNNING' if bot.running else 'STOPPED'}}</span></div>
+<div class="actions">
+<button class="btn primary" onclick="botAction('{{bot.id}}','start')">▶ Start</button>
+<button class="btn" onclick="botAction('{{bot.id}}','stop')">■ Stop</button>
+<button class="btn" onclick="botAction('{{bot.id}}','restart')">↻ Restart</button>
+<button class="btn danger" onclick="deleteBot('{{bot.id}}')">Delete</button>
+</div>
+<div class="panel"><div class="loghead"><h2>Logs</h2><button class="btn tiny" onclick="location.reload()">Refresh</button></div><pre id="logs">{{logs}}</pre></div>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<div class="panel small"><h2>Create account</h2><p>Start managing your Telegram bots.</p>
+<form method="post"><label>Username<input name="username" minlength="3" required></label><label>Password<input name="password" type="password" minlength="6" required></label><button class="btn primary">Register</button></form>
+<p class="muted">Already registered? <a href="{{url_for('login')}}">Login</a></p></div>
+{% endblock %}

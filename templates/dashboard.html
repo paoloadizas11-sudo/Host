@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<div class="toprow"><div><div class="badge">CONTROL PANEL</div><h1>Your bots</h1><p class="muted">Manage your Telegram bot processes.</p></div><a class="btn primary" href="{{url_for('create_bot')}}">＋ New Bot</a></div>
+{% if not bots %}<div class="empty"><h2>No bots yet</h2><p>Create your first Python Telegram bot.</p><a class="btn primary" href="{{url_for('create_bot')}}">Create Bot</a></div>{% endif %}
+<div class="botgrid">
+{% for b in bots %}
+<a class="botcard" href="{{url_for('bot_page',bot_id=b.id)}}"><div class="boticon">🤖</div><div class="grow"><h3>{{b.name}}</h3><small>{{b.filename}}</small></div><span class="dot {{'on' if b.running else 'off'}}"></span></a>
+{% endfor %}
+</div>
+{% endblock %}

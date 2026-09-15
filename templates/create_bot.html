@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<div class="panel"><div class="badge">NEW BOT</div><h1>Create a bot</h1>
+<p class="muted">Upload the Python file that runs your bot. The token is passed to it as <code>TELEGRAM_BOT_TOKEN</code>.</p>
+<form method="post" enctype="multipart/form-data">
+<label>Bot name<input name="name" placeholder="My Telegram Bot" required></label>
+<label>Telegram Bot Token<input name="token" type="password" placeholder="123456:ABC..." required></label>
+<label>Python file<input name="file" type="file" accept=".py" required></label>
+<button class="btn primary">Create Bot</button>
+</form>
+<div class="warning">⚠️ Only upload code you trust. Uploaded Python code runs on the hosting server.</div>
+</div>
+{% endblock %}
